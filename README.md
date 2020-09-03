@@ -30,7 +30,9 @@ In your terminal window, in your copy of this repository (folder) - it should be
     * It should list one: this repo, called "origin" - `origin https://github.com/aleitch1/INST377-FA2020`
 * type `git remote rename origin classfiles`
 * type `git remote -v` and confirm you now have one remote, called "classfiles"
-* in Github, find the link to your **Github Pages** repository. It should be something like "https://github.com/YOUR-GITHUB-USERNAME/YOUR-GITHUB-USERNAME.github.io.git"
+* in Github, find the link to your **Github Pages** repository.
+    * It should be something like `https://github.com/YOUR-GITHUB-USERNAME/YOUR-GITHUB-USERNAME.github.io.git`
+    * the `.git` at the end specifies it is a repository and not a webpage
 * type `git remote add origin [THE LINK YOU JUST FOUND]` and hit enter.
 * type `git remote -v` and check that you have two possible remote repositories: the course repo, and your Github Pages repo.
 * Type `git pull origin master` to bring in any changes you made to your GH Pages repository
