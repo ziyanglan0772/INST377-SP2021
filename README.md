@@ -53,6 +53,21 @@ Link For Reference: [Github Desktop supports only one remote](https://github.com
 **To set your repository remote (where you publish code to) in GH Desktop**
 * [Setting Your Remote On Github Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/changing-a-remotes-url-from-github-desktop)
 
+### How It Should Look When You're Done
+* `git remote -v` should output this:
+```
+classfiles https://github.com/aleitch1/INST377-FA2020.git (fetch)
+classfiles https://github.com/aleitch1/INST377-FA2020.git (push)
+origin https://github.com/your-username/your-username.github.io.git (fetch)
+origin https://github.com/your-username/your-username.github.io.git (push)
+```
+* going to https://github.com/your-username/your-username.github.io should show a copy of the lab files
+* in twenty minutes or so, going to https://your-username.github.io/public/lab_1 should show whatever is in your `/public/lab_1/index.html` file.
+* your local directory on your laptop - in finder or explorer - will be named INST377-FA2020
+* in Github Desktop it'll turn up as your-username.github.io
+   * you may have a duplicate repository now
+   * delete the one with no lab files in it
+
 ##### How To Update Your Own Remote From The Main Lab Files
 You will need to pull from the class repository periodically as we go through the semester, though hopefully not for the first few weeks.
 To do this, in VSCode:
