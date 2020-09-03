@@ -52,4 +52,5 @@ You will need to pull from the class repository periodically as we go through th
 To do this, in VSCode:
 * Open a terminal window.
 * Type `git pull classfiles master`, and you should have the updated files.
+* You should do this pretty much every time you get working with the labs.
 * If it messes with you, which it may do, please join us for office hours and we'll work it out.
