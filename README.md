@@ -37,6 +37,7 @@ In your terminal window, in your copy of this repository (folder) - it should be
     * the `.git` at the end specifies it is a repository and not a webpage
 * type `git remote add origin [THE LINK YOU JUST FOUND]` and hit enter.
 * type `git remote -v` and check that you have two possible remote repositories: the course repo, and your Github Pages repo.
+* type `git pull origin master` - it won't WORK because you have two different histories, but it will clear related problems.
 * Type `git push origin master --force-with-lease`
     * `--force-with-lease` is like saying "Do it now but don't overwrite any serious local changes."
     * If it doesn't work, you can use `git push origin master --force`, but it will blow away all changes on your remote. Use with caution.
