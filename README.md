@@ -2,6 +2,12 @@
 
 This is the lab support repository for the Fall 2020 version of INST377. 
 
+The following steps are to do the following:
+* Give you a LOCAL copy of the lab code that you can mess with - if you know how, you can also use the "fork" button on this repository, clone your fork, and have your own copy that way.
+* give you a remote, public link to your labs as you complete them that can be graded. 
+
+At the end of these instructions, your github pages repository should look like a copy of this repository.
+
 ### Installation
 * Clone this repository into Github Desktop using the large green Code button.
 * Open it using the "open this repository in VSCode" button within Github Desktop.
@@ -26,8 +32,10 @@ In your terminal window, in your INST377 repository (folder):
 * in Github, find the link to your **Github Pages** repository. It should be something like "https://github.com/YOUR-GITHUB-USERNAME/YOUR-GITHUB-USERNAME.github.io.git"
 * type `git remote add origin [THE LINK YOU JUST FOUND]` and hit enter.
 * type `git remote -v` and check that you have two possible remote repositories: the course repo, and your Github Pages repo.
+* Type `git pull origin master` to bring in any changes you made to your GH Pages repository
 * Type `git push origin master --force-with-lease`
     * `--force-with-lease` is like saying "Do it now but don't overwrite any serious local changes."
+    * If it doesn't work, you can use `git push origin master --force`, but it will blow away all changes on your remote. Use with caution.
 * You have now **overwritten your Github Pages repository**
 * You should be able to check that your labs are visible online by visiting `https://YOUR-GITHUB-USERNAME.github.io/public/lab_1/index.html`
 * Changes to your repository should be visible in Github Desktop
