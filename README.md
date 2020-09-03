@@ -25,7 +25,7 @@ So: First, get set up with Github Pages by following the instructions present he
 - You are using Github Desktop.
 
 #### Back to VSCode ---> This portion is experimental.
-In your terminal window, in your INST377 repository (folder):
+In your terminal window, in your copy of this repository (folder) - it should be called "INST377-FA2020":
 * type `git remote -v` - this will list all the remote places you can save your code. It should list one: this repo, called "origin"
 * type `git remote rename origin classfiles`
 * type `git remote -v` and confirm you now have one remote, called "classfiles"
