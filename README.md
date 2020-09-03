@@ -4,9 +4,11 @@ This is the lab support repository for the Fall 2020 version of INST377.
 
 The following steps are to do the following:
 * Give you a LOCAL copy of the lab code that you can mess with - if you know how, you can also use the "fork" button on this repository, clone your fork, and have your own copy that way.
-* give you a remote, public link to your labs as you complete them that can be graded. 
+* give you a remote, public link to your labs as you complete them that can be graded.
 
-At the end of these instructions, your github pages repository should look like a copy of this repository.
+At the end of these instructions, your github pages repository should look like a copy of this repository. You can then work on your labs locally, push to your own remote, and pull changes I make here into your repos without wrecking your work.
+
+It'll be great! But it is tricky to get there.
 
 ### Installation
 * Clone this repository into Github Desktop using the large green Code button.
@@ -40,6 +42,7 @@ In your terminal window, in your copy of this repository (folder) - it should be
     * `--force-with-lease` is like saying "Do it now but don't overwrite any serious local changes."
     * If it doesn't work, you can use `git push origin master --force`, but it will blow away all changes on your remote. Use with caution.
 * You have now **overwritten your Github Pages repository**
+    * Check by navigating to `https://github.com/your-username/your-username.github.io` - a bunch of lab files should be there.
 * You should be able to check that your labs are visible online by visiting `https://YOUR-GITHUB-USERNAME.github.io/public/lab_1/index.html`
 * Changes to your repository should be visible in Github Desktop
 
