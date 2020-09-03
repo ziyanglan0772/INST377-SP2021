@@ -44,6 +44,9 @@ In your terminal window, in your INST377 repository (folder):
 It will not let you keep tabs on both remotes at once, there's a four-year-long conversation on the topic available below if you care.
 Link For Reference: [Github Desktop supports only one remote](https://github.com/desktop/desktop/issues/1442)
 
+**To set your repository remote (where you publish code to) in GH Desktop**
+* [Setting Your Remote On Github Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/changing-a-remotes-url-from-github-desktop)
+
 ##### How To Update Your Own Remote From The Main Lab Files
 You will need to pull from the class repository periodically as we go through the semester, though hopefully not for the first few weeks.
 To do this, in VSCode:
