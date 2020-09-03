@@ -26,7 +26,8 @@ So: First, get set up with Github Pages by following the instructions present he
 
 #### Back to VSCode ---> This portion is experimental.
 In your terminal window, in your copy of this repository (folder) - it should be called "INST377-FA2020":
-* type `git remote -v` - this will list all the remote places you can save your code. It should list one: this repo, called "origin"
+* type `git remote -v` - this will list all the remote places you can save your code.
+    * It should list one: this repo, called "origin" - `origin https://github.com/aleitch1/INST377-FA2020`
 * type `git remote rename origin classfiles`
 * type `git remote -v` and confirm you now have one remote, called "classfiles"
 * in Github, find the link to your **Github Pages** repository. It should be something like "https://github.com/YOUR-GITHUB-USERNAME/YOUR-GITHUB-USERNAME.github.io.git"
