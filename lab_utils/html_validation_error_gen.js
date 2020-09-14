@@ -57,7 +57,7 @@ if (obj) {
     .then((data) => data.map((m) => {
       const titleArr = m.filename.match(/lab_\d+/g);
       m.title = titleArr ? titleArr[0] : m.filename;
-      console.log(m.title);
+      console.log('Checked ', m.title);
       return m;
     }))
     .then((data) => data.map((m) => severeErrorCheck(m)))
