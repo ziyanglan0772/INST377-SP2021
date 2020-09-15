@@ -108,7 +108,7 @@ describe('Lab 4', () => {
     cy.contains('hello world', { matchCase: false });
   });
 
-  it('Should receive an HTML element containing "Hello World" from the server', () => {
+  it('Should receive a string containing "Hello World" from the server - use res.send from Express docs for this', () => {
     cy.fixture('test_values').then((json) => {
       const labUrl = `${json.test_context || ''}/lab_4/`;
       cy.visit(labUrl);
