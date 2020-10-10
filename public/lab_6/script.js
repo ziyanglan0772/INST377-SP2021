@@ -9,7 +9,12 @@ function range(int) {
 }
 
 function sortFunction(a, b, key) {
-  return (a[key] < b[key] ? -1 : (a[key] > b[key] ? 1 : 0));
+  if (a[key] < b[key]) {
+    return -1;
+  } if (a[key] > b[key]) {
+    return 1;
+  }
+  return 0;
 }
 
 document.body.addEventListener('submit', async (e) => {
