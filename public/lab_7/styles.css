@@ -1,6 +1,6 @@
 /*CSS*/
 body {
-    background: #3895a8;
+    background: #eee;
   }
   
   .wrapper {
@@ -25,7 +25,6 @@ body {
     border-radius: 4px;
   }
   
-  /* Enter YOUR lab styles after this line */
   .flex-outer li,
   .flex-inner {
     display: flex;
@@ -78,6 +77,26 @@ body {
     margin:0 auto;
   }
 
+  /* New for Lab 7 */
+  h1 {
+    margin: 20px 50px;
+    padding: 0 20px;
+    min-height: 75px;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    flex-wrap: nowrap;
+  }
+  
   #chartContainer {
       background: red;
+      border-radius: 1px dotted black;
+      height: 370px;
+      width: 100%;
   }
+
+  
