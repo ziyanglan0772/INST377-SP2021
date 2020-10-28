@@ -5,8 +5,35 @@ function convertRestaurantsToCategories(restaurantList) {
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
-  return canvasJSConfigObject;
-} 
+  CanvasJS.addColorSet('customColorSet1', [
+    // add an array of colors here
+  ]);
+
+  return {
+    animationEnabled: true,
+    colorSet: 'customColorSet1',
+    title: {
+      text: 'Change This Title'
+    },
+    axisX: {
+      interval: 1,
+      labelFontSize: 12
+    },
+    axisY2: {
+      interlacedColor: 'rgba(1,77,101,.2)',
+      gridColor: 'rgba(1,77,101,.1)',
+      title: 'Change This Title',
+      labelFontSize: 12,
+      scaleBreaks: [] // Add your scale breaks here
+    },
+    data: [{
+      type: 'bar',
+      name: 'restaurants',
+      axisYType: 'secondary',
+      dataPoints: datapointsFromRestaurantsList
+    }]
+  };
+}
 
 function runThisWithResultsFromServer(jsonFromServer) {
   console.log('jsonFromServer', jsonFromServer);
@@ -16,7 +43,7 @@ function runThisWithResultsFromServer(jsonFromServer) {
   // Instantiate your chart
   const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
   const options = makeYourOptionsObject(reorganizedData);
-  const chart = new CanvasJS.Chart("chartContainer", options);
+  const chart = new CanvasJS.Chart('chartContainer', options);
   chart.render();
 }
 
