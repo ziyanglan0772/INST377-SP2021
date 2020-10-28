@@ -14,6 +14,10 @@ function runThisWithResultsFromServer(jsonFromServer) {
   // Process your restaurants list
   // Make a configuration object for your chart
   // Instantiate your chart
+  const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
+  const options = makeYourOptionsObject(reorganizedData);
+  const chart = new CanvasJS.Chart("chartContainer", options);
+  chart.render();
 }
 
 document.body.addEventListener('submit', async (e) => {
