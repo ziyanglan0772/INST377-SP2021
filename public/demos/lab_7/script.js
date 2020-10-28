@@ -33,14 +33,15 @@ async function loadData() {
   const newDataShape = randomRestaurantsArray.reduce((collection, item, i) => {
     // for each item, check if we have a category for that item already
     const findCat = collection.find((findItem) => findItem.label === item.category);
-
+    
     if (!findCat) {
       collection.push({
         label: item.category,
         y: 1
       });
     } else {
-      findCat.y += 1;
+      const position = collection.findIndex(el => el.label === item.category);
+      collection[position].y += 1;
     }
     return collection;
   }, []);
@@ -49,8 +50,8 @@ async function loadData() {
 
   const div2 = document.createElement('div');
   const obj = {
-    label: randomRestaurants[0].category,
-    y: randomRestaurants.length
+    label: randomRestaurantsArray[0].category,
+    y: randomRestaurantsArray.length
   };
   div2.innerHTML = `<h2>What we want</h2> <br /> <h4>A category, how many things are in the category</h4><pre><code class="language-javascript">${JSON.stringify(obj)}</pre></code>`;
 
