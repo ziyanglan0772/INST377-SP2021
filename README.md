@@ -15,7 +15,7 @@ This is the lab support repository for the Spring 2021 version of INST377.
 * Instead, you will need to add a remote to your code base, and publish your work there.
 
 #### In VSCode
-In your terminal window, in your copy of this repository (folder) - it should be called "INST377-SP2021":
+In your terminal window, in your copy of this repository (folder):
 * type `git remote -v` - this will list all the remote places you can save your code. It should list two repositories:
     * The course copy of this repo, called "upstream" - `upstream https://github.com/UMD-INST377/INST377-SP2021`
     * Your copy of this repo, called "origin" - `origin https://github.com/Your-Username/INST377-SP2021`
