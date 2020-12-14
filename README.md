@@ -36,6 +36,6 @@ origin https://github.com/your-username/INST377-SP2021.git (push)
 You will need to pull from the class repository periodically as we go through the semester, though hopefully not for the first few weeks.
 To do this, in VSCode:
 * Open a terminal window.
-* Type `git pull upstream master`, and you should have any changes that have been made since your last pull.
+* Type `git pull upstream main`, and you should have any changes that have been made since your last pull.
 * You should do this pretty much every time you get working with the labs.
 * If it messes with you, which it may do, please join us for office hours and we'll work it out.
