@@ -1,0 +1,14 @@
+/* Write some styles based on the tutorial at javascript.info: introduction to browser events
+ https://javascript.info/introduction-browser-events */
+
+ .role {
+    background: blue;
+ }
+
+ ul {
+   background: red;  
+ }
+
+ div {
+    background: rgba(45, 148, 112, 0.4);   
+ }
