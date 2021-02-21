@@ -122,20 +122,13 @@ describe('Lab 4', () => {
 
   // CSS TESTS START HERE
 
-  it('Should use the submit button to POST material to the /api endpoint', () => {
+  it('Should use the submit button to POST material to the /api endpoint and receive hello world back', () => {
     cy.get('form').should('have.attr', 'method', 'post');
+    cy.get('form').should('have.attr', 'action', '/api');
     cy.get('button[type=submit]')
-      .click();
-    cy.contains('hello world', { matchCase: false });
-  });
-
-  it('Should receive a string containing "Hello World" from the server - use res.send from Express docs for this', () => {
-    cy.fixture('test_values').then((json) => {
-      const labUrl = `${json.test_context || ''}/lab_4/`;
-      cy.visit(labUrl);
-      cy.get('button[type=submit]')
-        .click();
-      cy.contains('hello world', { matchCase: false });
-    });
+      .click()
+      .then(() => {
+        cy.contains('hello world', { matchCase: false });
+      });
   });
 });
