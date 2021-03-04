@@ -9,12 +9,9 @@
     "test2": "node --experimental-modules lab_utils/html_validation_error_gen.js && npx cypress open",
     "start": "nodemon --ignore public server.js"
   },
-<<<<<<< HEAD
   "engines": {
     "node": "v14.15.4"
   },
-=======
->>>>>>> 831dc64ce0569304bedb8aa2b3c2b20fd89256e0
   "author": "Alex Leitch",
   "license": "ISC",
   "dependencies": {
