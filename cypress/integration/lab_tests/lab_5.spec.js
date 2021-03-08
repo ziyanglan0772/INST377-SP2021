@@ -55,7 +55,7 @@ describe('Lab 5 - Maps Of Food Places', () => {
     });
 
     it('Contains a form element with a single input', () => {
-      cy.get('form input[type="text"]')
+      cy.get('.columns .column:first-of-type form input[type="text"]')
         .each(($txt) => {
           const name = $txt.attr('name');
           const id = $txt.attr('id');
@@ -67,7 +67,7 @@ describe('Lab 5 - Maps Of Food Places', () => {
     });
 
     it('Contains a list element for results', () => {
-      cy.get('ul')
+      cy.get('.columns .column:first-of-type ul')
         .each(($txt) => {
           const className = $txt.attr('class');
           expect(className, 'You need a selector for this list').to.exist;
@@ -84,18 +84,18 @@ describe('Lab 5 - Maps Of Food Places', () => {
     });
 
     it('Contains target for leaflet in div id `mapid`', () => {
-      cy.get('#mapid');
+      cy.get('.columns .column:nth-of-type(2) #mapid');
     });
 
     it('Leaflet is correctly initialized into #mapid', () => {
-      cy.get('#mapid')
+      cy.get('.columns .column:nth-of-type(2) #mapid')
         .should('have.class', 'leaflet-container');
     });
 
     it('Lists 5 restaurants by zip code', () => {
       const array = [20740, 20737, 20742];
       const select = getRandomIntInclusive(0, 2);
-      cy.get('form input[type="text"]')
+      cy.get('.columns .column form input[type="text"]')
         .type(array[select]);
 
       cy.get('button[type="submit"]')
