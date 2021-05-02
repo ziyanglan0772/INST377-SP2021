@@ -21,30 +21,30 @@ h1{
   width: 1000px;
   margin: 0 auto;
 }
-.flex-outer li,
-.flex-inner{
+.box-flex li,
+.age{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.flex-inner {
+.age {
   padding: 0 10px;
   justify-content: space-between;
   
 }
 
-.flex-outer > li > label,
-.flex-outer li p {
+.box-flex > li > label,
+.box-flex li p {
   flex: 1 0 100px;
-  max-width: 225px;
+  max-width: 200px;
 }
  
-.flex-outer > li > label + *,
-.flex-inner {
+.box-flex > li > label + *,
+.age {
   flex: 1 0 0;
 }
-.flex-outer li{
+.box-flex li{
   margin-bottom: 20px;
 }
 input, textarea{

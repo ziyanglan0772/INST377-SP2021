@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziyang Lan Lab 4</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+  <form action="/api" method="post">
+
+  <h1>Ziyang Lan Lab 4</h1> 
+     <div class="container"> 
+            <ul class="flex-outer">
+              <li>
+                <label for="fname">First Name</label>
+                <input type="text" name ="fname" id="fname">
+              </li>
+              <li>
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname">
+              </li>
+              <li>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+              </li>
+              <li>
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone">
+              </li>
+              <li>
+                <label for="message">Text field</label>
+                <textarea id="message" name="message" rows="5" cols="33">
+					This is some default message text. 
+                </textarea>
+              </li>
+              <li>
+                <p>Age</p>
+              
+	                <div class="age flex-inner">
+	                 
+	                  <div class="item"> 
+	                    <input type="checkbox" name="age1" id="age1">
+	                    <label for="age1">18-35</label>
+
+	                  </div>
+	                  <div class="item"> 
+	                    <input type="checkbox" name="age2" id="age2">
+	                    <label for="age2">35-50</label>
+	                  </div>
+	                  <div class="item"> 
+	                    <input type="checkbox" name="age3" id="age3">
+	                    <label for="age3">50-65</label>
+	                  </div>
+	                 
+	               
+	              	</div>
+	            </li>
+            
+               <button type="submit" id="submit" name ="btn btn-primary">SUBMIT FORM</button>
+         
+          </div>
+    </form>
+    <script type="text/javasript" src="server.js"></script>  
+  </body>
+  </html>
