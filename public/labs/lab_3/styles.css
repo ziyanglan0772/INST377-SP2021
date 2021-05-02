@@ -1,2 +1,64 @@
 /* Add some css styles based on the tutorial at javascript.info: introduction to browser events
  https://javascript.info/introduction-browser-events */
+
+ body {
+  background-color: #f5f5f5;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slider {
+  position: fixed;
+  width: 450px;
+  padding: 20px 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #ddd;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  
+}
+
+.prev {
+  left: 7px;
+  top: 76px;
+  position: absolute;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.next {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  right: 7px;
+  top: 76px;
+  position: absolute;
+}
+
+.imgs {
+  width: 450px;
+  overflow: hidden;
+}
+
+.imgs ul {
+  height: 150px;
+  width: 9999px;
+  transition: margin-left 250ms;
+  font-size: 0;
+  position: relative;
+}
+
+.imgs li {
+  float: left;
+} 
