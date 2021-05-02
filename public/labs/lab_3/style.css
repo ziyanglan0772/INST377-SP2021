@@ -22,15 +22,15 @@ ul{
 }
 
 .slider img {
-  width: 99px;
-  height: 99px;
+  width: 150px;
+  height: 150px;
   display: block;
   
 }
 
 .prev {
-  left: -35px;
-  top: 48px;
+  left: 7px;
+  top: 76px;
   position: absolute;
   border-radius: 50%;
   width: 30px;
@@ -42,16 +42,13 @@ ul{
   width: 30px;
   height: 30px;
   right: 7px;
-  top: 48px;
+  top: 76px;
   position: absolute;
 }
-.imgs{
-  position: relative;
-}
-.imgs .inner{
-  width: 395px;
+
+.imgs {
+  width: 450px;
   overflow: hidden;
-  
 }
 
 .imgs ul {
@@ -65,21 +62,3 @@ ul{
 .imgs li {
   float: left;
 } 
-.flex{
-  display: flex;
-}
-nav{
-  padding: 20px 0;
-  text-align: center;
-}
-nav li{
-  display: inline-block;
-  padding: 0 10px;
-}
-.footer{
-  padding: 20px 0;
-  text-align: center;
-}
-.logo img{
-  height: 50px;
-}

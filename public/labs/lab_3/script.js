@@ -1,24 +1,31 @@
 
    	let slider = document.querySelector('#slider');
-    let width = 150; 
-    let count = 3;
 
-    let list = slider.querySelector('ul');
-    let lis = slider.querySelectorAll('li');
+    let list = slider.querySelector('ul.list');
+    let imgs = slider.querySelectorAll('img');
 
     let pos = 0;
     let prev = slider.querySelector('.prev');
     let next = slider.querySelector('.next');
-    // left
-    prev.onclick = function() {
-      pos = pos + width * count;
-      pos = Math.min(pos, 0);
-      list.style.marginLeft = pos + 'px';
-    };
-    // right
-    next.onclick = function() {
-      pos = pos - width * count;
-      pos = Math.max(pos, -width * (lis.length - count));
-      list.style.marginLeft = pos + 'px';
-    };
+    
+
+    let arr = ["images/onigiri_1.png","images/onigiri_2.png","images/onigiri_3.png","images/onigiri_4.png","images/roll_1.png","images/roll_2.png","images/roll_3.png"]; 
+
+	prev.onclick = function(){
+	    let img =  arr.pop()
+	    arr.unshift(img)
+	    imgs.forEach(function(item, index) {
+	    	item.src = arr[index];
+	    })
+	    return true;
+	}
+	next.onclick = function(){
+	    let img = arr.shift()
+	    arr.push(img); 
+	    imgs.forEach(function(item, index) {
+	    	item.src = arr[index];
+	    })
+	    return true;
+	}
+    
   
