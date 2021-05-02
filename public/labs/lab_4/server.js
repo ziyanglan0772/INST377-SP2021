@@ -1,10 +1,12 @@
+function onLoad() {
+  console.log('script loaded');
+}
 
-var express = require("express");
-var app = express();
-var router = express.Router()
+window.onLoad = onLoad;
 
-router.use('/api', function(req, res) {
-  res.send('Hello Word');
-})
-
-app.listen(3000);
+app.route('/api')
+  .post(async(req, res) => {
+    console.log('POST request detected');
+    console.log('From data in res.body', req.body);
+    res.send('Hello Word');
+  });
