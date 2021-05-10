@@ -1,5 +1,7 @@
-function onLoad() {
-  console.log('script loaded');
-}
+const express = require('express')
+const app = express()
+const port = 3000
 
-window.onload = onLoad;
+app.get('/api', (req, res) => {
+  res.send('Hello World!')
+})
