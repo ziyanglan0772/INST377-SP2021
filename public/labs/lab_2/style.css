@@ -20,26 +20,26 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Gorassp;', cursive;
   color: #2a2a2a;
 }
 
 p, input, li {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Goblin One', sans-serif;
   color: #2a2a2a;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
   text-align: center;
-  text-shadow: 2px 2px 10px black;
-  font-weight: 100;
+  text-shadow: 5px 5px 15px grey;
+  font-weight: 300;
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: center;
-  font-weight: 800;
+  font-weight: 300;
 }
 
 h3 {
@@ -133,14 +133,9 @@ nav a, nav span {
 
 .aside img {
   width: 100%;
-  height: auto;
+  height: width;
 }
 
 .footer {
   margin-top: 10px;
-}
-
-.something{
-  color: green
-  ;
 }
