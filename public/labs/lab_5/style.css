@@ -12,9 +12,6 @@ body{
     padding: 0 20px;
 }
 
-h1,h2,h3{
-    line-height: 20.;
-}
 
 #mapid { height: 500px; }
 
