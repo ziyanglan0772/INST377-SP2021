@@ -1,78 +1,72 @@
-/* eslint-disable max-len */
-function mapScript() {
-  const mymap = L.map('mapid').setView([38.9897, -76.9378], 13);
-
+restaurantList= []
+function mapInit() {
+  // follow the Leaflet Getting Started tutorial here
+  const f_map = L.map('mapid').setView([38.9897, -76.9378], 13);
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiaWxpa2V0YWNvcyIsImEiOiJja213NzE0czMwYzRjMnVrNmlvcWw4MmU1In0.DMYw1ISN9OD4PzgOKcztxQ'
-  }).addTo(mymap);
-  return mymap;
+    accessToken: 'sk.eyJ1Ijoieml5YW5nbGFuMDc3MiIsImEiOiJja29rYjRvYXcwM292MnhybXZwMHdzdGp0In0.CBJWA4guqMNOSXDxVElSsg'
+}).addTo(f_map);
+    console.log('f_map',f_map)
+  return f_map;
+  
 }
 
-async function dataFilter(mapFromMapFunction) {
-  const form = document.querySelector('#search-form');
-  const search = document.querySelector('#search');
-  const targetList = document.querySelector('.target-list');
-  const replyMessage = document.querySelector('.reply-message');
+async function dataHandler(mapObjectFromFunction) {
+  // use your assignment 1 data handling code here
+  // and target mapObjectFromFunction to attach markers
+const form=document.querySelector('#search-form');
+const search=document.querySelector('#search');
+const replyMessage = document.querySelector(".reply-message");
+const targetList=document.querySelector('.target-list');
 
-  const request = await fetch('/api');
-  const data = await request.json();
+const request=await fetch('/api');
+const data=await request.json();
 
-  // this code fires when our form submits
-  // it filters our data list and returns it to the HTML
-  form.addEventListener('submit', async (event) => {
-    targetList.innerText = '';
-
-    event.preventDefault();
-    console.log('submit fired', search.value);
-    // eslint-disable-next-line max-len
-    // make sure each returned restaurant _can_ be plotted on the map by checking for the value we need
-    const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
-    const topFive = filtered.slice(0, 5);
-
-    if (topFive.length < 1) {
-      replyMessage.classList.add('box');
-      replyMessage.innerText = 'No matches found';
-    }
-
-    console.table(topFive);
-
-    topFive.forEach((item) => {
-      const longLat = item.geocoded_column_1.coordinates;
-      console.log('markerLongLat', longLat[0], longLat[1]);
-      const marker = L.marker([longLat[1], longLat[0]]).addTo(mapFromMapFunction);
-
-      const appendItem = document.createElement('li');
-      appendItem.classList.add('block');
-      appendItem.classList.add('list-item');
-      appendItem.innerHTML = `<div class="list-header is-size-5">${item.name}</div><address class="is-size-6">${item.address_line_1}</address>`;
-      targetList.append(appendItem);
-    });
-
-    const {coordinates} = topFive[0]?.geocoded_column_1;
-    console.log('viewSet coords', coordinates);
-    mapFromMapFunction.panTo([coordinates[1], coordinates[0]], 0);
+form.addEventListener('submit', async(event) => {
+  event.preventDefault();
+  console.log('submit fired', search.value);
+  const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
+  const topFive = filtered.slice(0,5);
+  console.table(filtered);
+  
+  topFive.forEach((item)=>{
+    const longLat= item.geocoded_column_1.coordinates;
+    const marker = L.marker([longLat[1], longLat[0]]).addTo(mapObjectFromFunction);
+    console.log('markerLongLat', longLat[0], longLat[1]);
+    
+    const appendItem = document.createElement('li');
+    appendItem.classList.add('block');
+    appendItem.classList.add('list-item');
+    appendItem.innerHTML = `<div class="list-header is-size-5">${item.name}</div><address class="is-size-6">${item.address_line_1}</address>`;
+    targetList.append(appendItem);
   });
 
-  // this listens for typing into our input box
-  search.addEventListener('input', (event) => {
-    console.log('input', event.target.value);
-    if (search.value.length === 0) {
-      // clear your "no matches found" code
-      replyMessage.innerText = '';
-      replyMessage.classList.remove('box');
-    }
-  });
+  const {coordinates} = topFive[0]?.geocoded_column_1;
+  console.log('viewSet coords', coordinates);
+  mapObjectFromFunction.panTo([coordinates[1],coordinates[0]], 0);
+});
+}
+function findMatches(word) {
+  return restaurantList.filter(restaurant => restaurant.name.toLowerCase().indexOf(word) > -1);
 }
 
+function displayMatches() {
+  const matchArray = findMatches(searchInput.value);
+  document.querySelector('.suggestions').innerHTML = matchArray.map(restaurant => `<li class="">
+            <div class="name">${restaurant.name}</div>
+            <div class="text">${restaurant.category}</div>
+            <div class="text italic">${restaurant.address_line_1}</div>
+            <div class="text italic">${restaurant.city}</div>
+            <div class="text italic">${restaurant.zip}</div>
+          </li>`).join('');
+}
 async function windowActions() {
-  console.log('window loaded');
-  const mapObject = mapScript(); // Load your map
-  await dataFilter(mapObject); // load your food data
+  const map = mapInit();
+  await dataHandler(map);
 }
 
 window.onload = windowActions;
