@@ -1,10 +1,13 @@
-const express = require('express')
-const app = express()
-const port = 3000
+function load(){
+    console.log('script loaded');
+}
 
-app.get('/api', (req, res) => {
-  res.send('Hello World!')
+window.onload = load();
+
+app.post('/api', function(request,response){
+    response.send('hello world')
 })
-app.listen(port, () => {
-  console.log(`Lab 4 app listening at http://localhost:${port}`)
+
+app.listen('3000', function() {
+    console.log('run');
 })
